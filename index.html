@@ -1,0 +1,258 @@
+<html>
+    <head>
+        <title>
+            HTML Interpreter
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Blaka&family=Bree+Serif&family=Plus+Jakarta+Sans:ital,wght@1,200&display=swap" rel="stylesheet">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .whole-wrap{
+        width: 100%;
+        height: 100vh;
+        border: 5px solid black;
+    }
+header{
+    background: #4a78b6;
+    height: 3.5rem;
+    text-align: center;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+header .main-head{
+    padding-top: 7px;
+}
+.main-head .first{
+   font-weight:900;
+   color:#f2f520;
+}
+.main-head .second{
+  color:whitesmoke;
+}
+/* stylin body container */
+.body-container{
+    height:100%;
+    width:100%;
+}
+/* styling our input and output boxes */
+.box1,.box2{
+    display: inline-block;
+    /* border:2px solid black; */
+    margin-left:0;
+   
+}
+.box1{
+    width:45%;
+}
+.box2{
+    width:54%;
+    height:100%;
+}
+/* styling the text area */
+.box1 textarea{
+    height: 50%;
+    width: 100%;
+    background-color: #e0eeee;
+}
+.box1 textarea:focus{
+    border:5px groove #6727ab;
+}
+.box2{
+    background-color: #eef0ae;
+    overflow: auto;
+}
+.box3{
+    display: inline-block;
+    height:45%;
+    width: 100%;
+    background-color: #b3d1d2;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    overflow: hidden;
+    text-align: center;
+   
+}
+.box1 h4{
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    background-color: #eef0ae;
+}
+button{
+    width:200px;
+}
+/* styling of buttons */
+.color-red{
+    
+    display: block;
+    margin: 2px auto ;
+ height:30px;
+ width:200px;
+ border-radius: 6px;
+ font-weight: bolder;
+ color:#ee0606;
+ border-color:#ee0606 ;
+ cursor:pointer;
+ background-color:#ec9898 ;
+ font-size: x-large;
+}
+.color-blue{
+    
+    display: block;
+    margin: 2px auto ;
+ height:30px;
+ width:200px;
+ border-radius: 6px;
+ font-weight: bolder;
+ color:#1025d2;
+ border-color:#1025d2 ;
+ cursor:pointer;
+ background-color:#8f98e4 ;
+ font-size: x-large;
+}
+.color-green{
+    
+    display: block;
+    margin: 2px auto ;
+ height:30px;
+ width:200px;
+ border-radius: 6px;
+ font-weight: bolder;
+ color:#00e616;
+ border-color:#00e616 ;
+ cursor:pointer;
+ background-color:#94f19d ;
+ font-size: x-large;
+}
+.style-change{
+    display: block;
+    margin: 2px auto ;
+ height:30px;
+ width:200px;
+ border-radius: 6px;
+ font-weight: bolder;
+ color:black;
+ border-color:black ;
+ cursor:pointer;
+ background-color:#959a95 ;
+ font-size: x-large;
+}
+ .newStyle{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+</style>
+<script>
+    function inputToOutput(){
+        let input = document.getElementById("input");
+        let output = document.getElementById("output");
+        output.style.fontFamily="bold";
+        output.innerHTML= input.value;
+        
+    }
+    function colorChange(){
+        let output = document.getElementById("output");
+        if(output.style.color === "black"){
+            output.style.color = "red";
+        }else{
+
+            output.style.color = "black";
+        } 
+    }
+    function colorGreen(){
+        let output = document.getElementById("output");
+        if(output.style.color === "black"){
+            output.style.color = "green";
+        }else{
+
+            output.style.color = "black";
+        } 
+    }
+    function colorBlue(){
+        let output = document.getElementById("output");
+        if(output.style.color === "black"){
+            output.style.color = "blue";
+        }else{
+
+            output.style.color = "black";
+        } 
+    }
+
+    function changeStyle(){
+        let output = document.getElementById("output");
+        // output.style.fontFamily="Impact,Charcoal,sans-serif";
+       
+        if(output.style.fontFamily === "normal"){
+
+                output.style.fontFamily="fantasy";
+                            }
+                      else{
+
+                    output.style.fontFamily="normal";
+                      }
+    }
+
+    function changeStyle2(){
+        let output = document.getElementById("output");
+        // output.style.fontFamily="Impact,Charcoal,sans-serif";
+
+        if(output.style.fontFamily === "normal"){
+
+            output.style.fontFamily="Gill Sans,sans-serif";
+        }
+        else{
+
+            output.style.fontFamily="normal";
+        }
+    }
+
+    function changeStyle3(){
+        let output = document.getElementById("output");
+        // output.style.fontFamily="Impact,Charcoal,sans-serif";
+
+        if(output.style.fontFamily === "normal"){
+
+            output.style.fontFamily="cursive";
+        }
+        else{
+
+            output.style.fontFamily="normal";
+        }
+    }
+</script>
+    </head>
+  <body>
+    
+    <header class="heading-container">
+        <h1 class="main-head"><span class="first">H</span >tml <span class="second">I</span>nter<span class="second">p</span>reter</h1>
+    </header>
+   
+   <div class="body-container">
+        <div class="box1">
+           
+            <h4>Write the HTML code in the box below -></h4>
+            <textarea style="resize:none;" id="input" onkeyup="inputToOutput()"></textarea>
+            <div class="box3">
+                <h3>Change colour using these buttons:</h3>
+                <button class="color-red" onclick="colorChange()" >Red</button>
+                <button class="color-blue" onclick="colorBlue()" >Blue</button>
+                <button class="color-green" onclick="colorGreen()" >Green</button>
+                <h3>change fontFamily with these buttons:</h3>
+                <button class="style-change" onclick="changeStyle()">Charcoal Style</button>
+                <button class="style-change" onclick="changeStyle2()">Gill sans</button>
+                <button class="style-change" onclick="changeStyle3()">Cursive</button>
+            </div>
+        </div>
+        <div class="box2" id="output">
+
+        </div>
+        
+   </div>
+
+
+
+   
+    
+  </body>  
+</html>
